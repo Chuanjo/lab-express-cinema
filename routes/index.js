@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => res.render('index'))
 router.get('/movies', (req, res, next) => {
     Movie.find()
     .then((response)=>{
-        console.log(response)
+        // console.log(response)
         res.render("movies.hbs", {response})
     })
     .catch((err)=>{
@@ -28,7 +28,6 @@ router.get("/movies/:id",(req,res,next)=>{
       res.render("movie-details.hbs", {response})
     })
     .catch((err)=>{
-      console.log(err)
       next(err)
     })
   })
